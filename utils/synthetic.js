@@ -22,7 +22,7 @@ export function read_list(odoo, model, menu_name, settings, trend) {
     const options = {
         domain: settings.domain || [],
         fields: settings.fields || get_view_fields(odoo, model, menu_name, 'list', trend),
-        iterations: settings.iterations || 10,
+        iterations: settings.iterations || 50,
         limit: settings.limit || 80,
         order: settings.order || null,
     };
@@ -37,7 +37,7 @@ export function read_form(odoo, model, menu_name, settings, trend) {
     const options = {
         domain: settings.domain || [],
         fields: settings.fields || get_view_fields(odoo, model, menu_name, 'form'),
-        iterations: settings.iterations || 10,
+        iterations: settings.iterations || 50,
         limit: settings.limit || 1,
         order: settings.order || null,
     };
