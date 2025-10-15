@@ -76,28 +76,28 @@ export default function() {
     account_bill_read_list(odoo, config.settings, trends.account.bill_read_list);
     account_bill_read_form(odoo, config.settings, trends.account.bill_read_form);
 
-    // const account_report_options = {
-	// 	"comparison": {
-	// 		"date_from": "2024-04-01",
-	// 		"date_to": "2025-03-31",
-	// 		"filter": "no_comparison",
-	// 		"number_period": 1,
-	// 		"period_order": "descending",
-	// 		"periods": []
-	// 	},
-	// 	"date": {
-	// 		"date_from": "2024-04-01",
-	// 		"date_to": "2025-03-31",
-	// 		"filter": "previous_year",
-	// 		"mode": "single",
-	// 		"period": -1,
-	// 		"period_type": "fiscalyear",
-	// 		"string": "As of 31/03/2025"
-	// 	}
-	// }
-    // account_report_pnl(odoo, 10, account_report_options, trends.account.report_pnl);
-    // account_report_bs(odoo, 10, account_report_options, trends.account.report_bs);
-    // account_report_tb(odoo, 10, account_report_options, trends.account.report_tb);
-    // account_report_ap(odoo, 10, account_report_options, trends.account.report_ap);
-    // account_report_ar(odoo, 10, account_report_options, trends.account.report_ar);
+    const account_report_options = {
+		"comparison": {
+			"date_from": "2024-04-01",
+			"date_to": "2025-03-31",
+			"filter": "no_comparison",
+			"number_period": 1,
+			"period_order": "descending",
+			"periods": []
+		},
+		"date": {
+			"date_from": "2024-04-01",
+			"date_to": "2025-03-31",
+			"filter": "previous_year",
+			"mode": "single",
+			"period": -1,
+			"period_type": "fiscalyear",
+			"string": "As of 31/03/2025"
+		}
+	}
+    account_report_pnl(odoo, 10, account_report_options, trends.account.report_pnl);
+    account_report_bs(odoo, 10, account_report_options, trends.account.report_bs);
+    account_report_tb(odoo, 10, account_report_options, trends.account.report_tb);
+    account_report_ap(odoo, 10, account_report_options, trends.account.report_ap);
+    account_report_ar(odoo, 10, account_report_options, trends.account.report_ar);
 }
