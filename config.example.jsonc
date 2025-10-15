@@ -1,0 +1,136 @@
+{
+    "odoo": {
+        "host": "https://odoo.example.com",
+        "database": "ExampleCorp",
+        "user": "admin",
+        "pass": "admin"
+    },
+    "settings": {
+        "sale": {
+            // note that the majority of these read_list/read_form settings can be
+            // omitted. only the domain/order are recommended for test stability.
+            "read_list": {
+                // select the records to read. for test stability, it's recommended
+                // to include a term like "id < some_number", so that the selected
+                // records don't change over time (default: [])
+                "domain": [
+                    ["state", "in", ["draft", "sent", "sale"]],
+                    ["id", "<", 1000]
+                ],
+
+                // sort order for records. again, it's recommended to use "id desc",
+                // so that the selected records don't change over time (default: none)
+                "order": "id desc",
+
+                // number of records to read per iteration (default: 80)
+                "limit": 80,
+
+                // number of iterations to perform (default: 50)
+                "iterations": 50,
+
+                // fields to read. if null/false, the script will fetch a field list
+                // from get_view (i.e., it will pick all fields shown on the *default*
+                // list view for the model) (default: null)
+                "fields": false
+            },
+            "read_form": {
+                "domain": [["id", "<", 1000]],
+                "order": "id desc",
+                "limit": 1,
+                "iterations": 50,
+                "fields": false
+            }
+        },
+        "purchase": {
+            "read_list": {
+                "domain": [["id", "<", 1000]],
+                "order": "id desc",
+                "limit": 80,
+                "iterations": 50,
+                "fields": false
+            },
+            "read_form": {
+                "domain": [["id", "<", 1000]],
+                "order": "id desc",
+                "limit": 1,
+                "iterations": 50,
+                "fields": false
+            }
+        },
+        "stock": {
+            "read_list": {
+                "domain": [["id", "<", 1000]],
+                "order": "id desc",
+                "limit": 80,
+                "iterations": 50,
+                "fields": false
+            },
+            "read_form": {
+                "domain": [["id", "<", 1000]],
+                "order": "id desc",
+                "limit": 1,
+                "iterations": 50,
+                "fields": false
+            }
+        },
+        "partner": {
+            "read_list": {
+                "domain": [["id", "<", 1000]],
+                "order": "id desc",
+                "limit": 80,
+                "iterations": 50,
+                "fields": false
+            },
+            "read_form": {
+                "domain": [["id", "<", 1000]],
+                "order": "id desc",
+                "limit": 1,
+                "iterations": 50,
+                "fields": false
+            }
+        },
+        "account": {
+            "inv_read_list": {
+                // note that you should include a 'move_type' term here!
+                "domain": [
+                    ["id", "<", 1000],
+                    ["move_type", "=", "out_invoice"]
+                ],
+                "order": "id desc",
+                "limit": 80,
+                "iterations": 50,
+                "fields": false
+            },
+            "inv_read_form": {
+                "domain": [
+                    ["id", "<", 1000],
+                    ["move_type", "=", "out_invoice"]
+                ],
+                "order": "id desc",
+                "limit": 1,
+                "iterations": 50,
+                "fields": false
+            },
+            "bill_read_list": {
+                "domain": [
+                    ["id", "<", 1000],
+                    ["move_type", "=", "in_invoice"]
+                ],
+                "order": "id desc",
+                "limit": 80,
+                "iterations": 50,
+                "fields": false
+            },
+            "bill_read_form": {
+                "domain": [
+                    ["id", "<", 1000],
+                    ["move_type", "=", "in_invoice"]
+                ],
+                "order": "id desc",
+                "limit": 1,
+                "iterations": 50,
+                "fields": false
+            }
+        }
+    }
+}
