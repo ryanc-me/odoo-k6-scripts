@@ -1,5 +1,4 @@
-config.jsonc
-config.json
+config.*
+!config.exaxmple.jsonc
 
-output.json
-output.csv
+output.*
