@@ -50,7 +50,7 @@ export function account_report_pnl(odoo, iterations, data, trend) {
     for (let i = 0; i < iterations; i++) {
         run_account_report(odoo, report_name, data, trend);
     }
-    print("Completed account_report_pnl");
+    console.log("Completed account_report_pnl");
 }
 export function account_report_bs(odoo, iterations, data, trend) {
     const report_name = 'Balance Sheet';
@@ -58,7 +58,7 @@ export function account_report_bs(odoo, iterations, data, trend) {
     for (let i = 0; i < iterations; i++) {
         run_account_report(odoo, report_name, data, trend);
     }
-    print("Completed account_report_bs");
+    console.log("Completed account_report_bs");
 }
 export function account_report_tb(odoo, iterations, data, trend) {
     const report_name = 'Trial Balance';
@@ -66,7 +66,7 @@ export function account_report_tb(odoo, iterations, data, trend) {
     for (let i = 0; i < iterations; i++) {
         run_account_report(odoo, report_name, data, trend);
     }
-    print("Completed account_report_tb");
+    console.log("Completed account_report_tb");
 }
 export function account_report_ap(odoo, iterations, data, trend) {
     const report_name = 'Aged Payable';
@@ -74,7 +74,7 @@ export function account_report_ap(odoo, iterations, data, trend) {
     for (let i = 0; i < iterations; i++) {
         run_account_report(odoo, report_name, data, trend);
     }
-    print("Completed account_report_ap");
+    console.log("Completed account_report_ap");
 }
 export function account_report_ar(odoo, iterations, data, trend) {
     const report_name = 'Aged Receivable';
@@ -82,5 +82,5 @@ export function account_report_ar(odoo, iterations, data, trend) {
     for (let i = 0; i < iterations; i++) {
         run_account_report(odoo, report_name, data, trend);
     }
-    print("Completed account_report_ar");
+    console.log("Completed account_report_ar");
 }
